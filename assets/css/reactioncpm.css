@@ -1,0 +1,21 @@
+.CPM-reaction-icon {
+  padding: 20px;
+}
+
+.image-hover {
+  position: relative;
+  display: inline-block;
+}
+
+.image-hover:after {
+  content: "like";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
