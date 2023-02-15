@@ -2,20 +2,87 @@
   padding: 20px;
 }
 
-.image-hover {
-  position: relative;
+.hover-text-like {
   display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+.hover-text-like:hover::after {
+  content: attr(like-data-text);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
 }
 
-.image-hover:after {
-  content: "like";
-  display: block;
+.hover-text-love {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+.hover-text-love:hover::after {
+  content: attr(love-data-text);
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0,0,0,0.5);
-  opacity: 0;
-  transition: opacity 0.3s;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.hover-text-laugh {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+.hover-text-laugh:hover::after {
+  content: attr(laugh-data-text);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.hover-text-angry {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+.hover-text-angry:hover::after {
+  content: attr(angry-data-text);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.cpm-reaction-icon-box{
+  display: inline-block;
+  padding-right: 5%;
+  
+
+}
+
+.cpm-reactions-container {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
 }

@@ -11,41 +11,41 @@
  * 
  * @return the number of reactions.
  */
-function cpm_format_reaction_numbers($num) {
+// function cpm_format_reaction_numbers($num) {
 
-    if($num>1000) {
-            $x = round($num);
-            $x_number_format = number_format($x);
-            $x_array = explode(',', $x_number_format);
-            $x_parts = array('k', 'm', 'b', 't');
-            $x_count_parts = count($x_array) - 1;
-            $x_display = $x;
-            $x_display = $x_array[0] . ((int) $x_array[1][0] !== 0 ? '.' . $x_array[1][0] : '');
-            $x_display .= $x_parts[$x_count_parts - 1];
+//     if($num>1000) {
+//             $x = round($num);
+//             $x_number_format = number_format($x);
+//             $x_array = explode(',', $x_number_format);
+//             $x_parts = array('k', 'm', 'b', 't');
+//             $x_count_parts = count($x_array) - 1;
+//             $x_display = $x;
+//             $x_display = $x_array[0] . ((int) $x_array[1][0] !== 0 ? '.' . $x_array[1][0] : '');
+//             $x_display .= $x_parts[$x_count_parts - 1];
 
-            return $x_display;
-    } else {
-        $under_1k = "";
-        if($num == 1000) {
-            $under_1k = "1k+";
-        } elseif($num > 900) {
-            $under_1k = "0.9k";
-        } elseif($num > 800) {
-            $under_1k = "0.8k";
-        } elseif($num > 700) {
-            $under_1k = "0.7k";
-        } elseif($num > 600) {
-            $under_1k = "0.6k";
-        } elseif($num > 500) {
-            $under_1k = "0.5k";
-        } else {
-            $under_1k = $num;
-        }
-        return $under_1k;
-    }
-    return $num;
+//             return $x_display;
+//     } else {
+//         $under_1k = "";
+//         if($num == 1000) {
+//             $under_1k = "1k+";
+//         } elseif($num > 900) {
+//             $under_1k = "0.9k";
+//         } elseif($num > 800) {
+//             $under_1k = "0.8k";
+//         } elseif($num > 700) {
+//             $under_1k = "0.7k";
+//         } elseif($num > 600) {
+//             $under_1k = "0.6k";
+//         } elseif($num > 500) {
+//             $under_1k = "0.5k";
+//         } else {
+//             $under_1k = $num;
+//         }
+//         return $under_1k;
+//     }
+//     return $num;
 
-}
+// }
 // Function to get the client ip address
 /**
  * If the user is behind a proxy, the proxy's IP address will be returned, otherwise the user's IP

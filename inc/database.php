@@ -22,6 +22,5 @@ $sql = "CREATE TABLE $table_name (
 dbDelta( $sql );
 // add_option( 'wpac_db_version', $wpac_db_version );
 
-
-
 }
+

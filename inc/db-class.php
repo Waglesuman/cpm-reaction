@@ -15,7 +15,7 @@ class CPM_DB {
     public function __construct() {
         global $wpdb;
         $this->wpdb = $wpdb;
-        $this->reactions_table = $this->wpdb->prefix . "cpm_reactions_system";
+        $this->reactions_table = $this->wpdb->prefix . "sumanwagle";
         $this->post_reaction_count_key = "_cpm_post_reactions";
     }
 
@@ -84,7 +84,7 @@ class CPM_DB {
     public function cpm_insert_new_reaction($uid, $uip, $pid, $rid) {
 
         require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-        //$this->wpdb->hide_errors(); 
+        // $this->wpdb->hide_errors(); 
         $this->user_id = intval($uid);
         $this->user_ip = $uip;
         $this->post_id = intval($pid);
@@ -92,6 +92,7 @@ class CPM_DB {
 
         $this->status = 0;
         if($this->post_id > 0 && $this->post_id != "" && $this->reaction_id > 0 && $this->reaction_id !=""){
+                 
             $this->wpdb->insert( 
                 ''.$this->reactions_table.'', 
                    [ 
