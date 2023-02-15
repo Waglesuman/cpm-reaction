@@ -30,10 +30,22 @@ if ( !defined('CPM_PLUGIN_DIR_PATH')) {
 }
 
 
+require CPM_PLUGIN_DIR_PATH. 'inc/database.php';
+register_activation_hook( __FILE__, 'create_db_tables' );
+
+
+// Functions to performa database related quries.
+require CPM_PLUGIN_DIR_PATH. 'inc/db-class.php';
+
 //Include Scripts & Styles
 require CPM_PLUGIN_DIR_PATH. 'inc/scripts.php';
 
+// // CPM Static Functions.
+require CPM_PLUGIN_DIR_PATH. 'inc/validate.php';
+require CPM_PLUGIN_DIR_PATH. 'inc/static-functions.php';
 
+/* Including the file reaction.php in the plugin. */
+require CPM_PLUGIN_DIR_PATH. 'inc/reaction.php';
 
 
 
@@ -48,19 +60,16 @@ function onClick() {
   document.getElementById("clicks").innerHTML = clicks;
 };
     </script>
-
-
-
 <?
 
 
 
 function display_content_after_post( $content ) {
   $content .= '<div class="after-post-content">';
-  $content .= '<div class="image-hover"><span class="CPM-reaction-icon"><img onClick="onClick()" src="'.CPM_PLUGIN_DIR.'/img/emoji_like_1.png" alt="Like Reaction"></span></div>';
-  $content .= '<span class="CPM-reaction-icon"><img onClick="onClick()" src="'.CPM_PLUGIN_DIR.'/img/emoji_love_1.png" alt="Like Reaction" onClick="onClick()" ></span>';
-  $content .= '<span class="CPM-reaction-icon"><img onClick="onClick()" src="'.CPM_PLUGIN_DIR.'/img/emoji_laugh_1.png" alt="Like Reaction"></span>';
-  $content .= '<span class="CPM-reaction-icon" ><img onClick="onClick()" src="'.CPM_PLUGIN_DIR.'/img/emoji_sad_1.png" alt="Like Reaction"></span>';
+  $content .= '<span title="like" class="CPM-reaction-icon"><img onClick="onClick()" src="'.CPM_PLUGIN_DIR.'assets/img/emoji_like_1.png" alt="Like Reaction"></span>';
+  $content .= '<span title="love" class="CPM-reaction-icon"><img onClick="onClick()" src="'.CPM_PLUGIN_DIR.'assets/img/emoji_love_1.png" alt="Like Reaction" onClick="onClick()" ></span>';
+  $content .= '<span title="laugh" class="CPM-reaction-icon"><img onClick="onClick()" src="'.CPM_PLUGIN_DIR.'assets/img/emoji_laugh_1.png" alt="Like Reaction"></span>';
+  $content .= '<span title="sad" class="CPM-reaction-icon" ><img onClick="onClick()" src="'.CPM_PLUGIN_DIR.'assets/img/emoji_sad_1.png" alt="Like Reaction"></span>';
   $content .= '</div>';
   $content .= '<p>Clicks: <a id="clicks">0</a></p>';
 
@@ -69,7 +78,17 @@ function display_content_after_post( $content ) {
 add_filter( 'the_content', 'display_content_after_post' );
 
 function reactionplugin(){
- 
   echo'hello there ';
 }
 add_action( "wp_footer", "reactionplugin" );
+
+
+
+//cpm Plugin Ajax Function for Saving Reaction
+require CPM_PLUGIN_DIR_PATH. 'inc/ajax/save-reaction.php';
+add_action('wp_ajax_cpm_save_reaction_ajax_action', 'cpm_save_reaction_ajax_action');
+add_action('wp_ajax_nopriv_cpm_save_reaction_ajax_action', 'cpm_save_reaction_ajax_action');
+
+require CPM_PLUGIN_DIR_PATH. 'inc/ajax/reaction-count.php';
+add_action('wp_ajax_cpm_reaction_count_update', 'cpm_reaction_count_update');
+add_action('wp_ajax_nopriv_cpm_reaction_count_update', 'cpm_reaction_count_update');
