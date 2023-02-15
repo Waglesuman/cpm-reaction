@@ -2,8 +2,8 @@
 function cpm_save_reaction_ajax_action() {
     /* Creating a new instance of the class cpm_DB. */
     $cpm_db = new CPM_DB;
-    $save_type = get_option('cpm_save_type');
-    if(isset($_POST['uid']) && cpm_check_user($_POST['uid']) && $save_type == 1) {
+    // $save_type = get_option('cpm_save_type');
+    if(isset($_POST['uid']) && cpm_check_user($_POST['uid']) ) {
         if(isset($_POST['pid']) && cpm_check_post_id($_POST['pid']) && isset($_POST['rid'])) {
 
             $user_id = intval($_POST['uid']);
@@ -48,7 +48,7 @@ function cpm_save_reaction_ajax_action() {
             }
 
         }
-    } elseif(isset($_POST['uid']) && $_POST['uid'] == 0  && $save_type == 1)  {
+    } elseif(isset($_POST['uid']) && $_POST['uid'] == 0 )  {
         _e("You must be logged-in to react to this post", "cpmreaction");
     } else {
         if(isset($_POST['pid']) && cpm_check_post_id($_POST['pid']) && isset($_POST['rid'])) {

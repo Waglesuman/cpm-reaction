@@ -12,6 +12,10 @@ class CPM_DB {
     public $status; 
     public $post_reaction_count;
     public $post_reaction_count_key;
+   /**
+    * It creates a new table in the database called "sumanwagle" and adds a column called
+    * "post_reactions" to it.
+    */
     public function __construct() {
         global $wpdb;
         $this->wpdb = $wpdb;

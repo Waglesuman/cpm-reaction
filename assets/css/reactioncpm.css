@@ -76,8 +76,6 @@
 .cpm-reaction-icon-box{
   display: inline-block;
   padding-right: 5%;
-  
-
 }
 
 .cpm-reactions-container {
@@ -86,3 +84,40 @@
   align-items: center;
   flex-wrap: nowrap;
 }
+
+
+.cpm-reaction-icon {
+  transition: transform 0.2s; /* Add a transition effect to make the scaling smoother */
+}
+
+.cpm-reaction-icon:hover {
+  transform: scale(1.2); /* Enlarge the emoji by 1.2 times its original size */
+}
+
+/* .highlighted{
+  background-color: red; 
+  border-radius: 50%; 
+  /* width: 100px; 
+  height: 100px; */
+
+
+.highlighted {
+  /* background: yellow; */
+  border: 2px ;
+  border-radius: 50%;
+  display: inline-block;
+  padding: 2px;
+  background-color: #ffeb3b; /* change to highlight color */
+  box-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffeb3b, 0 0 15px #ffeb3b; /* add glowing effect */
+    border-radius: 50%;
+} 
+.hover-text-like {
+  transition: background-color 0.3s ease;
+}
+
+.hover-text-like:hover {
+  background-color: #ffeb3b; /* change to highlight color */
+  box-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffeb3b, 0 0 15px #ffeb3b; /* add glowing effect */
+    border-radius: 50%;
+}
+
