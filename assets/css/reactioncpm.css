@@ -1,7 +1,3 @@
-.CPM-reaction-icon {
-  padding: 20px;
-}
-
 .hover-text-like {
   display: inline-block;
   position: relative;
@@ -16,8 +12,9 @@
   padding: 3px;
   background-color: #333;
   color: #fff;
-  border-radius: 5px;
-  font-size: 14px;
+  border-radius: 40%;
+  font-size: 20px;
+
 }
 
 .hover-text-love {
@@ -34,8 +31,8 @@
   padding: 3px;
   background-color: #333;
   color: #fff;
-  border-radius: 5px;
-  font-size: 14px;
+  border-radius: 40%;
+  font-size: 20px;
 }
 
 .hover-text-laugh {
@@ -52,8 +49,8 @@
   padding: 3px;
   background-color: #333;
   color: #fff;
-  border-radius: 5px;
-  font-size: 14px;
+  border-radius: 40%;
+  font-size: 20px;
 }
 .hover-text-angry {
   display: inline-block;
@@ -69,20 +66,23 @@
   padding: 3px;
   background-color: #333;
   color: #fff;
-  border-radius: 5px;
-  font-size: 14px;
+  border-radius: 40%;
+  font-size: 20px;
 }
 
 .cpm-reaction-icon-box{
-  display: inline-block;
+  /* display: inline-block; */
+  /* display: flex; */
+justify-content: center;
+align-items: center;
+
   padding-right: 5%;
 }
 
 .cpm-reactions-container {
   display: flex;
-  align-content: center;
+  justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
 }
 
 
@@ -109,13 +109,41 @@
   padding: 2px;
   background-color: #ffeb3b; /* change to highlight color */
   box-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffeb3b, 0 0 15px #ffeb3b; /* add glowing effect */
-    border-radius: 50%;
+  border-radius: 50%;
 } 
 .hover-text-like {
   transition: background-color 0.3s ease;
 }
 
 .hover-text-like:hover {
+  background-color: #ffeb3b; /* change to highlight color */
+  box-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffeb3b, 0 0 15px #ffeb3b; /* add glowing effect */
+    border-radius: 50%;
+}
+
+.hover-text-love {
+  transition: background-color 0.3s ease;
+}
+
+.hover-text-love:hover {
+  background-color: #ffeb3b; /* change to highlight color */
+  box-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffeb3b, 0 0 15px #ffeb3b; /* add glowing effect */
+    border-radius: 50%;
+}
+.hover-text-laugh {
+  transition: background-color 0.3s ease;
+}
+
+.hover-text-laugh:hover {
+  background-color: #ffeb3b; /* change to highlight color */
+  box-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffeb3b, 0 0 15px #ffeb3b; /* add glowing effect */
+    border-radius: 50%;
+}
+.hover-text-angry {
+  transition: background-color 0.3s ease;
+}
+
+.hover-text-angey:hover {
   background-color: #ffeb3b; /* change to highlight color */
   box-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffeb3b, 0 0 15px #ffeb3b; /* add glowing effect */
     border-radius: 50%;
